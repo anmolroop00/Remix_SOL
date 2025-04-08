@@ -17,7 +17,12 @@ contract demo{
     }
 
     function read(uint256 _index) public view returns(uint, string memory){
-        
+        return (users[_index].id, users[_index].name);
+    }
+
+    function find(uint256 _index) public view returns (string memory){
+        require(_index<counter,"User does not exist!");
+        return(users[_index].name);
     }
 
 }
